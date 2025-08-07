@@ -1,5 +1,9 @@
 import ProjectCard from "../components/ProjectCard";
-import Intro from "../components/Intro.tsx";
+import IntroAbout from "../components/IntroAbout.tsx";
+import IntroEducation from "../components/IntroEducation.tsx";
+import IntroSkills from "../components/IntroSkills.tsx";
+import IntroContact from "../components/IntroContact.tsx";
+import OtherActivity from "../components/OtherActivity.tsx";
 
 export default function HomePage() {
     const projects = [
@@ -73,7 +77,10 @@ export default function HomePage() {
             <p>👤 <b>인원</b> : 5인</p><br/>
             <p>🙋‍♂️ <b>담당 업무</b> : 편의점 상품 DB 크롤링, 공지사항 및 상품 검색/랭킹 페이지 구현, 최종 발표</p><br/>
             <p>⚙️️ <b>주요 기술 스택</b> : TypeScript, React, Java, Spring, PostgreSQL, ElasticSearch, AWS</p><br/>
-            <img src="/images/기술스택.png" alt="기술스택" className="mt-2 rounded-lg"/>
+            <img src="/images/기술스택.png" alt="technology stack" className="mt-2 rounded-lg"/>
+            <img src="/images/상품검색.png" alt="search" className="mt-2 rounded-lg"/>
+            <img src="/images/상품랭킹.png" alt="ranking" className="mt-2 rounded-lg"/>
+            <img src="/images/상품상세.png" alt="detail" className="mt-2 rounded-lg"/>
 
             <br/>
             <div className="mt-3">
@@ -90,44 +97,74 @@ export default function HomePage() {
             </div>
             <br/><br/>
             <p>🗒️<b>회고</b></p>
-            K-DT
+            4개월간 프로그래밍 교육을 진행한 후 5인 조를 만들어 시작한 프로젝트입니다. 사용자 페르소나를 <b>외국인으로 설정하여</b>, 상품 검색 및 정보 제공 기능이 다국어로 지원할 수 있도록 구현했습니다.
             <br/><br/>
-            짱짱
+            상품 DB 구축은 CU 홈페이지에 존재하는 상품 정보 페이지를 <b>크롤링하여</b> 상품명, 상세 정보, 카테고리, 이미지를 저장했습니다. 또한, 이미지 파일 이름이 바코드 번호인 것을 이용하여 이미지 링크와 바코드 번호를 추출할 수 있었습니다.
+            <br/><br/>
+            영양 성분과 알러지 정보는 공공데이터포털에서 제공하는 <b>"HACCP 제품이미지 및 포장지표기정보"</b> OpenAPI를 통해 얻을 수 있었습니다.
+            <br/><br/>
+            CU 크롤링 데이터와 OpenAPI 데이터를 비교하여, 같은 바코드 번호를 가진 상품이 존재한다면 CU 크롤링 데이터 테이블에 영양 성분 및 알러지 정보 컬럼을 추가하여 OpenAPI에서 얻은 정보를 삽입하도록 했습니다. 이를 통해 각기 다른 정보들을 제공하는 두 소스로부터 데이터를 통합할 수 있었습니다.
+            <br/><br/>
+            이후 OpenAI 및 DeepL API를 사용하여 한국어로 구축한 상품 데이터를 다른 나라의 언어로 변환하여 <b>언어별 상품 정보 테이블</b>을 구축했습니다. 상품명 및 상세 정보는 고유명사 번역 문제로 인해, 신뢰도가 높은 ChatGPT(OpenAI API)를 사용하였고, 알러지 정보/영양 성분 등 단순 단어 나열 데이터는 DeepL API를 사용하여 번역함으로써 OpenAI 크레딧을 절약할 수 있었습니다.
+            <br/><br/>
+            <b>ElasticSearch</b>를 도입하여 검색 페이지를 구현했으나, 상품 수가 9,707개로 적은 편이라 속도 면에서 큰 개선은 없었습니다. 그러나, <b>edge_ngram</b> 분석기를 적용한 후 가중치를 수정하며 테스트함으로써 검색 정확도를 늘릴 수 있었습니다.
+            <br/><br/>
+            개발 중 발생했던 트러블 슈팅 중 하나는, ElasticSearch Bean 생성 실패 오류였습니다. <b>Spring 환경 변수 세팅 이전에</b> ElasticsearchAutoConfiguration이 실행되면서, Bean 생성에 필요한 환경변수가 로딩되지 않은 상태에서 Bean 생성을 시도하여 오류가 발생하는 문제가 있었습니다. 이를 해결하기 위해, <b>spring.factories</b> 파일에 환경변수 세팅을 하는 .java파일을 먼저 실행하도록 세팅하여 서버 실행 초기에 환경변수 세팅을 완료할 수 있었습니다.
+            <br/><br/>
+            <br/><br/>
+            단순 개발에서 그치는 것이 아니라, 화면 설계서, 요구사항 정의서, API 명세서, 메뉴트리 등 실제 기업에서 사용하는 설계 기법들을 체험할 수 있었습니다. 또한, 조원들과 함께 <b>Git을 사용한 형상관리</b>를 경험할 수 있었던 귀중한 시간이었습니다.
 
         </div>
 
 
             ),
         },
-        {
-            thumbnail: "/images/크아.jpg",
-            title: '게임 "크레이지아케이드" 유저 정보 검색 사이트 크아인포',
-            tags: ["React", "OpenAPI"],
-            description: "넥슨 오픈API를 활용하여 게임 유저 정보와 공지사항을 조회할 수 있는 웹사이트...",
-            expandedContent: (
-                <div>
-                    <p>º 넥슨 오픈API 활용</p>
-                    <p>º 주요 기능:</p>
-                    <ul className="list-disc list-inside ml-4">
-                        <li>게임 유저 전적 및 프로필 조회</li>
-                        <li>이벤트 및 공지사항 실시간 크롤링</li>
-                        <li>반응형 UI 기반 간편 검색</li>
-                    </ul>
-                    <p className="mt-2">🔗 <a href="https://cra-info.example.com" target="_blank" className="text-blue-600 underline">프로젝트 페이지</a></p>
-                </div>
-            ),
-        },
+
+//         {
+//             thumbnail: "/images/크아.jpg",
+//             title: '게임 "크레이지아케이드" 유저 정보 검색 사이트 크아인포',
+//             tags: ["React", "OpenAPI"],
+//             description: "넥슨 오픈API를 활용하여 게임 유저 정보와 공지사항을 조회할 수 있는 웹사이트...",
+//             expandedContent: (
+//                 <div>
+//                     <p>º 넥슨 오픈API 활용</p>
+//                     <p>º 주요 기능:</p>
+//                     <ul className="list-disc list-inside ml-4">
+//                         <li>게임 유저 전적 및 프로필 조회</li>
+//                         <li>이벤트 및 공지사항 실시간 크롤링</li>
+//                         <li>반응형 UI 기반 간편 검색</li>
+//                     </ul>
+//                     <p className="mt-2">🔗 <a href="https://cra-info.example.com" target="_blank" className="text-blue-600 underline">프로젝트 페이지</a></p>
+//                 </div>
+//             ),
+//         },
     ];
 
     return (
         <div className="min-h-screen bg-gray-50 p-8 space-y-6">
-            <h1 className="text-3xl font-bold text-center mb-10">📁 Portfolio Projects</h1>
-            <Intro />
+            <h1 className="text-3xl font-bold text-center mb-10 flex items-center gap-2">
+                <img src="/icons/projects.png" alt="email" className="w-5 h-5" />
+                Portfolio Projects
+            </h1>
+            <IntroAbout />
+            <IntroEducation />
+            <IntroSkills />
+            <IntroContact />
+            <hr className="border-t border-gray-300 my-8" />
+            <div className="max-w-3xl mx-auto">
+              <h2 className="text-2xl font-bold mb-4 text-black flex items-center gap-2">
+                  <img src="/icons/projects.png" alt="email" className="w-5 h-5" />
+                  Projects
+              </h2>
+            </div>
             <div className="space-y-6 max-w-3xl mx-auto">
                 {projects.map((project, index) => (
                     <ProjectCard key={index} {...project} />
                 ))}
             </div>
+            <hr className="border-t border-gray-300 my-8" />
+            <OtherActivity />
+
         </div>
     );
 }
