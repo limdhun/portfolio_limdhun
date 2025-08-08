@@ -4,8 +4,8 @@ export default function OtherActivity() {
     return (
         <SectionFadeIn>
             <div className="bg-white rounded-xl shadow p-6 max-w-3xl mx-auto my-6 text-black space-y-6">
-                <h2 className="text-2xl font-bold mb-4 text-black flex items-center gap-2">
-                    <img src="/icons/other.png" alt="other activity" className="w-5 h-5" />
+                <h2 className="font-inter text-2xl font-bold mb-4 text-black flex items-center gap-2">
+                    <img src={`${import.meta.env.BASE_URL}icons/other.png`} alt="other activity" className="w-5 h-5" />
                     Other Activity
                 </h2>
 

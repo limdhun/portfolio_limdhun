@@ -8,7 +8,7 @@ import OtherActivity from "../components/OtherActivity.tsx";
 export default function HomePage() {
     const projects = [
         {
-            thumbnail: "/images/capstone.png",
+            thumbnail: `${import.meta.env.BASE_URL}images/capstone.png`,
             title: "시각장애인을 위한 YOLOv5 기반 제품 인식 서비스",
             tags: ["DeepLearning", "ObjectDetection", "Python", "Java"],
             description: "부경대학교 전자공학과 캡스톤디자인 프로젝트",
@@ -16,7 +16,7 @@ export default function HomePage() {
                 <div>
                     <p>📅 <b>기간</b> : 2023.09 ~ 2024.06</p><br/>
                     <p>👤 <b>인원</b> : 3인</p><br/>
-                    <p>🙋‍♂️ <b>담당 업무</b> : 모델 학습, 데이터셋 수집, APK 개발</p><br/>
+                    <p>🙋‍♂️ <b>담당 업무</b> : 모델 학습, 데이터셋 수집, APK 개발, 발표 후 Q&A</p><br/>
                     <p>⚙️️ <b>기술 스택</b> : Java(APK 개발), Python(모델 학습)</p><br/>
                     <p>🏆<b>AWARD</b></p>
                     <ul className="list-disc list-inside ml-4">
@@ -26,7 +26,7 @@ export default function HomePage() {
                         <li>📜 제9회 대한임베디드공학회 ICT 대학생 논문경진대회 참여 (2024.07.01)</li>
                     </ul>
                     <br/>
-                    <img src="/images/비전스낵화면.png"
+                    <img src={`${import.meta.env.BASE_URL}images/비전스낵화면.png`}
                          alt="VisionSnack"
                          className="mt-2 rounded-lg border-2 border-black"/>
 
@@ -41,7 +41,7 @@ export default function HomePage() {
                     </div>
 
                     <div className="mt-3">
-                        🔗 <a href="/docs/시각장애인을 위한 YOLOv5 기반 제품 인식 시스템.pdf" target="_blank" className="text-blue-600 underline">논문</a>
+                        🔗 <a href={`${import.meta.env.BASE_URL}docs/시각장애인을 위한 YOLOv5 기반 제품 인식 시스템.pdf`} target="_blank" className="text-blue-600 underline">논문</a>
                     </div>
                     <br/><br/>
                     <p>🗒️<b>회고</b></p>
@@ -65,7 +65,7 @@ export default function HomePage() {
             ),
         },
         {
-            thumbnail: "/images/peeknpick.png",
+            thumbnail: `${import.meta.env.BASE_URL}images/peeknpick.png`,
             title: "바코드 기반 상품 정보 및 리뷰 확인 서비스 Peek&Pick",
             tags: ["React", "Spring Boot", "PostgreSQL", "ElasticSearch"],
             description: "신세계아이앤씨 K-Digital Training 8차수 프로젝트",
@@ -77,10 +77,10 @@ export default function HomePage() {
             <p>👤 <b>인원</b> : 5인</p><br/>
             <p>🙋‍♂️ <b>담당 업무</b> : 편의점 상품 DB 크롤링, 공지사항 및 상품 검색/랭킹 페이지 구현, 최종 발표</p><br/>
             <p>⚙️️ <b>주요 기술 스택</b> : TypeScript, React, Java, Spring, PostgreSQL, ElasticSearch, AWS</p><br/>
-            <img src="/images/기술스택.png" alt="technology stack" className="mt-2 rounded-lg"/>
-            <img src="/images/상품검색.png" alt="search" className="mt-2 rounded-lg"/>
-            <img src="/images/상품랭킹.png" alt="ranking" className="mt-2 rounded-lg"/>
-            <img src="/images/상품상세.png" alt="detail" className="mt-2 rounded-lg"/>
+            <img src={`${import.meta.env.BASE_URL}images/기술스택.png`} alt="technology stack" className="mt-2 rounded-lg"/>
+            <img src={`${import.meta.env.BASE_URL}images/상품검색.png`} alt="search" className="mt-2 rounded-lg"/>
+            <img src={`${import.meta.env.BASE_URL}images/상품랭킹.png`} alt="ranking" className="mt-2 rounded-lg"/>
+            <img src={`${import.meta.env.BASE_URL}images/상품상세.png`} alt="detail" className="mt-2 rounded-lg"/>
 
             <br/>
             <div className="mt-3">
@@ -121,7 +121,7 @@ export default function HomePage() {
         },
 
 //         {
-//             thumbnail: "/images/크아.jpg",
+//             thumbnail: {`${import.meta.env.BASE_URL}images/크아.jpg`},
 //             title: '게임 "크레이지아케이드" 유저 정보 검색 사이트 크아인포',
 //             tags: ["React", "OpenAPI"],
 //             description: "넥슨 오픈API를 활용하여 게임 유저 정보와 공지사항을 조회할 수 있는 웹사이트...",
@@ -142,18 +142,15 @@ export default function HomePage() {
 
     return (
         <div className="min-h-screen bg-gray-50 p-8 space-y-6">
-            <h1 className="text-3xl font-bold text-center mb-10 flex items-center gap-2">
-                <img src="/icons/projects.png" alt="email" className="w-5 h-5" />
-                Portfolio Projects
-            </h1>
+
             <IntroAbout />
             <IntroEducation />
             <IntroSkills />
             <IntroContact />
             <hr className="border-t border-gray-300 my-8" />
             <div className="max-w-3xl mx-auto">
-              <h2 className="text-2xl font-bold mb-4 text-black flex items-center gap-2">
-                  <img src="/icons/projects.png" alt="email" className="w-5 h-5" />
+              <h2 className="font-inter text-2xl font-bold mb-4 text-black flex items-center gap-2">
+                  <img src={`${import.meta.env.BASE_URL}icons/projects.png`} alt="email" className="w-5 h-5" />
                   Projects
               </h2>
             </div>
