@@ -3,7 +3,7 @@ import SectionFadeIn from "./SectionFadeIn";
 export default function IntroContact() {
   return (
     <SectionFadeIn>
-      <div className="bg-white rounded-xl shadow p-6 max-w-3xl mx-auto my-6 text-black">
+        <div className="bg-white rounded-xl shadow p-6 w-full max-w-screen-lg mx-auto my-6 text-black">
         <h2 className="font-inter text-2xl font-bold mb-4 flex items-center gap-2">
             <img src={`${import.meta.env.BASE_URL}icons/contact.png`} alt="contact" className="w-5 h-5" />
             Contact

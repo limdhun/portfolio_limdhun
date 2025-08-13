@@ -3,12 +3,12 @@ import SectionFadeIn from "./SectionFadeIn";
 export default function IntroSkills() {
     return (
         <SectionFadeIn>
-            <div className="bg-white rounded-xl shadow p-6 max-w-3xl mx-auto my-6 text-black space-y-6">
+            <div className="bg-white rounded-xl shadow p-6 w-full max-w-screen-lg mx-auto my-6 text-black">
                 <h2 className="font-inter text-2xl font-bold flex items-center gap-2">
                     <img src={`${import.meta.env.BASE_URL}icons/skills.png`} alt="skills" className="w-5 h-5" />
                     <span>Skills</span>
                 </h2>
-
+                <br/>
                 {/* Language */}
                 <section>
                     <h3 className="text-xl font-semibold mb-2">Language</h3>
