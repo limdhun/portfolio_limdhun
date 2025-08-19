@@ -34,7 +34,7 @@ export default function HomePage() {
                     />
                     <br/>
                     <div className="mt-3">
-                        🔗 <a href="https://github.com/limdhun/ObjectDetection_Before" target="_blank" className="text-blue-600 underline">Github</a>
+                        🔗 <a href="https://github.com/limdhun/VisionSnack" target="_blank" className="text-blue-600 underline">Github</a>
                     </div>
                     <div className="mt-3">
                         🔗 <a href="https://www.youtube.com/shorts/7jk78GHIPYE" target="_blank" className="text-blue-600 underline">시연 영상</a>
