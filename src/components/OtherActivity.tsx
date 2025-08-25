@@ -20,12 +20,18 @@ export default function OtherActivity() {
                         </div>
                         <div className="sm:w-2/3">
                             <p className="font-semibold">Spectrum Sensing 연구 활동</p>
+
                             <ul className="list-disc list-inside text-gray-700 text-sm">
                                 <li>무선 주파수 대역에 사용 중인 채널이 있는지 감지하는 기술</li>
                                 <li>스펙트럼 센싱 기술 MATLAB 시뮬레이션</li>
                                 <li>Energy Detection 기반 Cooperative Spectrum Sensing 연구</li>
                                 <li>RNN / LSTM 모델 기반 스펙트럼 센싱 연구</li>
                             </ul>
+                            <div className="mt-3 text-xm">
+                                🔗 <a href={`${import.meta.env.BASE_URL}docs/An_Optimal_Receiver_for_the_Fusion_Center_in_Cooperative_Spectrum_Sensing.pdf`} target="_blank" className="text-blue-600 underline">에너지 검파 기반 협력 스펙트럼 센싱 기술 논문</a>
+                            </div>
+                            <p className="text-gray-700 text-sm">25.08.20 J-KICS(한국통신학회 논문지) 게재 승인 (추후 게재 예정)</p>
+
                         </div>
                     </div>
 
