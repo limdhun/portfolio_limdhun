@@ -29,7 +29,7 @@ export default function IntroSkills() {
                     <ul className="list-disc list-inside text-gray-700 space-y-1">
                         <li>Spring Framework / Spring Boot</li>
                         <li>MySQL / MariaDB / PostgreSQL</li>
-                        <li>AWS (EC2, S3 등 기본 활용)</li>
+                        <li>Docker, AWS (EC2, S3 등 기본 활용)</li>
                     </ul>
                 </section>
 
